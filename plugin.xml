@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cn.yingzhichu.cordova.gwxchat" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>GWxChat</name>
+    <js-module name="GWxChat" src="www/GWxChat.js">
+        <clobbers target="cordova.plugins.GWxChat" />
+    </js-module>
+</plugin>
