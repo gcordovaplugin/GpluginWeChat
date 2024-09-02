@@ -1,2 +1,24 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cn.yingzhichu.cordova.gwxchat" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android"><name>GWxChat</name><js-module name="GWxChat" src="www/GWxChat.js"><clobbers target="cordova.plugins.GWxChat" /></js-module><platform name="android"><config-file parent="/*" target="res/xml/config.xml"><feature name="GWxChat"><param name="android-package" value="cn.yingzhichu.cordova.gwxchat.GWxChat" /></feature></config-file><config-file parent="/*" target="AndroidManifest.xml" /><source-file src="src/android/GWxChat.java" target-dir="src/cn/yingzhichu/cordova/gwxchat/GWxChat" /></platform><platform name="ios"><config-file parent="/*" target="config.xml"><feature name="GWxChat"><param name="ios-package" value="GWxChat" /></feature></config-file><source-file src="src/ios/GWxChat.m" /></platform></plugin>
+<plugin id="cn.yingzhichu.cordova.gwxchat" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>GWxChat</name>
+    <js-module name="GWxChat" src="www/GWxChat.js">
+        <clobbers target="cordova.plugins.GWxChat" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="GWxChat">
+                <param name="android-package" value="cn.yingzhichu.cordova.gwxchat.GWxChat" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml" />
+        <source-file src="src/android/GWxChat.java" target-dir="src/cn/yingzhichu/cordova/gwxchat/GWxChat" />
+    </platform>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="GWxChat">
+                <param name="ios-package" value="GWxChat" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/GWxChat.m" />
+    </platform>
+</plugin>
