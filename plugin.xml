@@ -2,16 +2,34 @@
 <plugin id="cn.yingzhichu.cordova.gwxchat" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>GWxChat</name>
     <js-module name="GWxChat" src="www/GWxChat.js">
-        <clobbers target="cordova.plugins.GWxChat" />
+        <clobbers target="gwechat" />
     </js-module>
+    <preference name="wechatid" />
     <platform name="android">
+        <framework src="com.tencent.mm.opensdk:wechat-sdk-android:+" />
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="GWxChat">
                 <param name="android-package" value="cn.yingzhichu.cordova.gwxchat.GWxChat" />
             </feature>
         </config-file>
-        <config-file parent="/*" target="AndroidManifest.xml" />
+        <config-file parent="/manifest" target="AndroidManifest.xml">
+            <queries>
+                <package android:name="com.tencent.mm" />   // 指定微信包名
+            </queries>
+        </config-file>
+        <config-file parent="/manifest/application" target="AndroidManifest.xml">
+            <meta-data android:name="wechatid" android:value="$wechatid"></meta-data>
+            <activity
+                android:name=".wxapi.WXEntryActivity"
+                android:label="@string/app_name"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar"
+                android:exported="true"
+                android:taskAffinity="$PACKAGE_NAME"
+                android:launchMode="singleTask">
+            </activity>
+        </config-file>
         <source-file src="src/android/GWxChat.java" target-dir="src/cn/yingzhichu/cordova/gwxchat/GWxChat" />
+        <source-file src="src/android/WXEntryActivity.java" target-dir="$PACKAGE_NAME/wxapi/WXEntryActivity" />
     </platform>
     <platform name="ios">
         <config-file parent="/*" target="config.xml">

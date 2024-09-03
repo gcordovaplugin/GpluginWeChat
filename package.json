@@ -1,0 +1,27 @@
+{
+  "name": "cn.yingzhichu.cordova.gwxchat",
+  "version": "0.0.1",
+  "description": "",
+  "cordova": {
+    "id": "cn.yingzhichu.cordova.gwxchat",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gcordovaplugin/GpluginWeChat.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gcordovaplugin/GpluginWeChat/issues"
+  },
+  "homepage": "https://github.com/gcordovaplugin/GpluginWeChat#readme"
+}
