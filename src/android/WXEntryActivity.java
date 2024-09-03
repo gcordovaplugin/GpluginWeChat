@@ -1,4 +1,5 @@
-package cn.yingzhichu.cordova.gwxchat;
+// package cn.yingzhichu.cordova.gwxchat;
+package __PACKAGE_NAME__.wxapi;
 import android.app.Activity;
 import org.json.JSONException;
 import org.json.JSONObject;

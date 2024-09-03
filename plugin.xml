@@ -6,16 +6,25 @@
     </js-module>
     <preference name="wechatid" />
     <platform name="android">
+        <hook type="after_plugin_add" src="script/android.js" />
+        <hook type="after_plugin_install" src="script/android.js" />
+        <hook type="before_plugin_rm" src="script/android.js" />
+        <hook type="before_plugin_uninstall" src="script/android.js" />
         <framework src="com.tencent.mm.opensdk:wechat-sdk-android:+" />
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="GWxChat">
                 <param name="android-package" value="cn.yingzhichu.cordova.gwxchat.GWxChat" />
             </feature>
         </config-file>
-        <config-file parent="/manifest" target="AndroidManifest.xml">
+        <config-file parent="/*" target="AndroidManifest.xml">
             <queries>
                 <package android:name="com.tencent.mm" />   // 指定微信包名
             </queries>
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
         </config-file>
         <config-file parent="/manifest/application" target="AndroidManifest.xml">
             <meta-data android:name="wechatid" android:value="$wechatid"></meta-data>
